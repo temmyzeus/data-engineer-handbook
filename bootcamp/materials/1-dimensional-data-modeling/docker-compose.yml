@@ -4,7 +4,8 @@ services:
     restart: on-failure
     container_name: ${DOCKER_CONTAINER}
     env_file:
-      - .env
+      - path: .env
+        required: false
       - example.env
     environment:
       - POSTGRES_DB=${POSTGRES_SCHEMA}
